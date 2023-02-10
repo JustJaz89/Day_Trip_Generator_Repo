@@ -11,7 +11,7 @@ def selected_destination():
     return dest_rand_result
 
 selected_destination = random.randrange(len(destinations))
-
+print(selected_destination)
 def selected_restaurant():
     rest_rand_result = random.choice(restaurants)
     return rest_rand_result
