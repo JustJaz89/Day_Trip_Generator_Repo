@@ -22,10 +22,9 @@ def selected_transportation():
     trans_rand_result = random.choice(transportation)
     return trans_rand_result
 
-
-
-
-
 # selected_destination = random.randrange(len(destinations))
-# print(f"We have selected {destinations[selected_destination]} for your destination! Are you satisfied with this location?")
-# confirm_choice = input("Please enter Y/N to confirm this destination.")
+
+# print(f"For your Day Trip we have selected {destinations(selected_destination)} for your destination,{restaurants(selected_restaurant)} for your restaurant, {entertainment(selected_entertainment)} for your entertainment, and {transportation(selected_transportation)} for your transportation.")
+
+# confirm_choice = input("Please enter Y/N to confirm this destination. ")
+
