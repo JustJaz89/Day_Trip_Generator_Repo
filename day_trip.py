@@ -27,7 +27,7 @@ def selected_transportation():
     return trans_rand_result
 selected_transportation = random.choice(transportation)
 
-print(f"""For your Day Trip we have selected
+print(f"""For your Day Trip we have randomly selected
 a. {selected_destination}
 b. {selected_restaurant}
 c. {selected_entertainment}
@@ -57,10 +57,48 @@ def edit_selection():
 
 def edit_destination():
     get_destination = selected_destination()
-    new_dest_response = input(f"Would you rather visit {get_destination} instead? Y/N")
+    new_dest_response = input(f"Would you rather visit {get_destination} instead? Y/N: ")
     if new_dest_response == "Y":
         print("Ok!")
         get_summary()
     elif new_dest_response == "N":
         edit_destination()
 
+def edit_restaurant():
+    get_restaurant = selected_restaurant()
+    new_rest_response = input(f"Would you rather go to {get_restaurant} instead? Y/N: ")
+    if new_rest_response == "Y":
+        print("Great!")
+        get_summary()
+    elif new_rest_response == "N":
+        edit_restaurant()
+
+def edit_entertainment():
+    get_entertainment = selected_entertainment()
+    new_enter_response = input(f"Would you rather enjoy {get_entertainment} instead? Y/N: ")
+    if new_enter_response == "Y":
+        print("Awesome!")
+        get_summary()
+    elif new_enter_response == "N":
+        edit_entertainment()
+
+def edit_transportation():
+    get_transportation = selected_transportation()
+    new_trans_response = input(f"Would you rathe use {get_transportation} instead? Y/N: ")
+    if new_trans_response == "Y":
+        print("Amazing!")
+        get_summary()
+    elif new_trans_response == "N":
+        edit_transportation()
+
+def get_summary():
+    print(f""" Let's review your Day Trip:
+    Destination: {get_destination}
+    Restaurant: {get_restaurant}
+    Entertainment: {get_entertainment}
+    Transportation: {get_transportation}""")
+    final_answer = input("Are you excited about this trip? Y/N : ")
+    if final_answer == "Y":
+        print("Congratulations! You are all set to enjoy your trip!")
+    elif final_answer == "N":
+        edit_selection()
