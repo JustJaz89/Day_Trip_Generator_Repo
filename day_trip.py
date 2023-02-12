@@ -34,3 +34,33 @@ c. {selected_entertainment}
 d. {selected_transportation}
 """)
 confirm_choice = input("Please enter Y/N to confirm this destination. ")
+
+def edit_selection():
+    print("Which option would you like to change? Destination, Restaurant, Entertainment, Transportation")
+    change_response = input("""
+    Please enter one of the following options;
+    a. Destination
+    b. Restaurant
+    c. Entertainment
+    d. Transportation
+    """)
+    if change_response == "a":
+        edit_destination()
+    elif change_response == "b":
+        edit_restaurant()
+    elif change_response == "c":
+        edit_entertainment()
+    elif change_response == "d":
+        edit_transportation()
+    else:
+        get_summary()
+
+def edit_destination():
+    get_destination = selected_destination()
+    new_dest_response = input(f"Would you rather visit {get_destination} instead? Y/N")
+    if new_dest_response == "Y":
+        print("Ok!")
+        get_summary()
+    elif new_dest_response == "N":
+        edit_destination()
+
