@@ -10,7 +10,7 @@ def selected_destination():
     dest_rand_result = random.choice(destinations)
     return dest_rand_result
 selected_destination = random.choice(destinations)
-print(selected_destination)
+# print(selected_destination)
 
 def selected_restaurant():
     rest_rand_result = random.choice(restaurants)
@@ -25,41 +25,12 @@ selected_entertainment = random.choice(entertainment)
 def selected_transportation():
     trans_rand_result = random.choice(transportation)
     return trans_rand_result
-selected_transportation = random.randrange(transportation)
+selected_transportation = random.choice(transportation)
 
-print(f"For your Day Trip we have selected {selected_destination}")
-# print(f"For your Day Trip we have selected {destinations[selected_destination]} for your destination,{restaurants(selected_restaurant)} for your restaurant, {entertainment(selected_entertainment)} for your entertainment, and {transportation(selected_transportation)} for your transportation.")
-# Easy Way
+print(f"""For your Day Trip we have selected
+a. {selected_destination}
+b. {selected_restaurant}
+c. {selected_entertainment}
+d. {selected_transportation}
+""")
 confirm_choice = input("Please enter Y/N to confirm this destination. ")
-
-# # Or Hard Way
-# def edit_selection():
-#     print("Which option would you like to change? Destination, Restaurant, Entertainment, Transportation")
-#     change_response = input("""
-#     Please enter one of the following options;
-#     a. Destination
-#     b. Restaurant
-#     c. Entertainment
-#     d. Transportation
-#     """)
-#     if change_response == "a":
-#         edit_destination()
-#     elif change_response == "b":
-#         edit_restaurant()
-#     elif change_response == "c":
-#         edit_entertainment()
-#     elif change_response == "d":
-#         edit_transportation()
-#     else:
-#         get_summary()
-
-# def edit_destination():
-#     get_destination = selected_destination()
-#     new_dest_response = input(f"Would you rather visit {get_destination} instead? Y/N ")
-#     if new_dest_response == "Y":
-#         print("Ok!")
-#         get_summary()
-#     elif new_dest_response == "N":
-#         edit_destination
-
-
