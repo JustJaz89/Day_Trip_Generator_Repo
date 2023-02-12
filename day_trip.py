@@ -43,7 +43,32 @@ def new_destination(confirm_choice):
 
 new_destination(confirm_choice)
 
+def new_restaurant(confirm_choice):
+    while confirm_choice != "Y":
+        selected_restaurant = random.choice(restaurants)
+        confirm_choice = input(f"Would you rather visit {selected_restaurant} instead? ")
+    else:
+        print(f"You have selected {selected_restaurant} as the destination for your trip. ")
 
+new_restaurant(confirm_choice)
+
+def new_entertainment(confirm_choice):
+    while confirm_choice != "Y":
+        selected_entertainment = random.choice(entertainment)
+        confirm_choice = input(f"Would you rather visit {selected_entertainment} instead? ")
+    else:
+        print(f"You have selected {selected_entertainment} as the destination for your trip. ")
+
+new_restaurant(confirm_choice)
+
+def new_transportation(confirm_choice):
+    while confirm_choice != "Y":
+        selected_transportation = random.choice(transportation)
+        confirm_choice = input(f"Would you rather visit {selected_transportation} instead? ")
+    else:
+        print(f"You have selected {selected_transportation} as the destination for your trip. ")
+
+new_transportation(confirm_choice)
 
 # def edit_selection():
 #     print("Which option would you like to change? Destination, Restaurant, Entertainment, Transportation")
