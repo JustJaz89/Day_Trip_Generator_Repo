@@ -10,7 +10,6 @@ def selected_destination():
     dest_rand_result = random.choice(destinations)
     return dest_rand_result
 selected_destination = random.choice(destinations)
-# print(selected_destination)
 
 def selected_restaurant():
     rest_rand_result = random.choice(restaurants)
@@ -27,13 +26,16 @@ def selected_transportation():
     return trans_rand_result
 selected_transportation = random.choice(transportation)
 
-print(f"""For your Day Trip we have randomly selected
+day_trip = (f"""For your Day Trip we have randomly selected
 a. {selected_destination}
 b. {selected_restaurant}
 c. {selected_entertainment}
 d. {selected_transportation}
 """)
+print(day_trip)
 confirm_choice = input("Please enter Y/N to confirm this destination. ")
+
+
 
 def edit_selection():
     print("Which option would you like to change? Destination, Restaurant, Entertainment, Transportation")
