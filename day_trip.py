@@ -26,6 +26,13 @@ def selected_transportation():
     return trans_rand_result
 selected_transportation = random.choice(transportation)
 
+confirm_choice = input("Please enter Y/N to confirm these travel options. ")
+
+def print_full_trip():
+    if confirm_choice == "Y":
+        print(day_trip)
+        get_summary()
+
 day_trip = (f"""For your Day Trip we have randomly selected
 a. {selected_destination}
 b. {selected_restaurant}
@@ -77,7 +84,7 @@ def get_trans():
 
 
 
-# confirm_choice = input("Please enter Y/N to confirm these travel options. ")
+
 
 # def new_destination(confirm_choice):
 #     while confirm_choice != "Y":
@@ -120,61 +127,61 @@ def get_trans():
 
 
 # # Hard Mode
-# def edit_selection():
-#     print("Which option would you like to change? Destination, Restaurant, Entertainment, Transportation")
-#     change_response = input("""
-#     Please enter one of the following options;
-#     a. Destination
-#     b. Restaurant
-#     c. Entertainment
-#     d. Transportation
-#     """)
-#     if change_response == "a":
-#         edit_destination()
-#     elif change_response == "b":
-#         edit_restaurant()
-#     elif change_response == "c":
-#         edit_entertainment()
-#     elif change_response == "d":
-#         edit_transportation()
-#     else:
-#         get_summary()
+def edit_selection():
+    print("Which option would you like to change? Destination, Restaurant, Entertainment, Transportation")
+    change_response = input("""
+    Please enter one of the following options;
+    a. Destination
+    b. Restaurant
+    c. Entertainment
+    d. Transportation
+    """)
+    if change_response == "a":
+        edit_destination()
+    elif change_response == "b":
+        edit_restaurant()
+    elif change_response == "c":
+        edit_entertainment()
+    elif change_response == "d":
+        edit_transportation()
+    else:
+        get_summary()
 
-# def edit_destination():
-#     get_destination = selected_destination()
-#     new_dest_response = input(f"Would you rather visit {get_destination} instead? Y/N: ")
-#     if new_dest_response == "Y":
-#         print("Ok!")
-#         get_summary()
-#     elif new_dest_response == "N":
-#         edit_destination()
+def edit_destination():
+    get_destination = selected_destination()
+    new_dest_response = input(f"Would you rather visit {get_destination} instead? Y/N: ")
+    if new_dest_response == "Y":
+        print("Ok!")
+        get_summary()
+    elif new_dest_response == "N":
+        edit_destination()
 
-# def edit_restaurant():
-#     get_restaurant = selected_restaurant()
-#     new_rest_response = input(f"Would you rather go to {get_restaurant} instead? Y/N: ")
-#     if new_rest_response == "Y":
-#         print("Great!")
-#         get_summary()
-#     elif new_rest_response == "N":
-#         edit_restaurant()
+def edit_restaurant():
+    get_restaurant = selected_restaurant()
+    new_rest_response = input(f"Would you rather go to {get_restaurant} instead? Y/N: ")
+    if new_rest_response == "Y":
+        print("Great!")
+        get_summary()
+    elif new_rest_response == "N":
+        edit_restaurant()
 
-# def edit_entertainment():
-#     get_entertainment = selected_entertainment()
-#     new_enter_response = input(f"Would you rather enjoy {get_entertainment} instead? Y/N: ")
-#     if new_enter_response == "Y":
-#         print("Awesome!")
-#         get_summary()
-#     elif new_enter_response == "N":
-#         edit_entertainment()
+def edit_entertainment():
+    get_entertainment = selected_entertainment()
+    new_enter_response = input(f"Would you rather enjoy {get_entertainment} instead? Y/N: ")
+    if new_enter_response == "Y":
+        print("Awesome!")
+        get_summary()
+    elif new_enter_response == "N":
+        edit_entertainment()
 
-# def edit_transportation():
-#     get_transportation = selected_transportation()
-#     new_trans_response = input(f"Would you rather use {get_transportation} instead? Y/N: ")
-#     if new_trans_response == "Y":
-#         print("Amazing!")
-#         get_summary()
-#     elif new_trans_response == "N":
-#         edit_transportation()
+def edit_transportation():
+    get_transportation = selected_transportation()
+    new_trans_response = input(f"Would you rather use {get_transportation} instead? Y/N: ")
+    if new_trans_response == "Y":
+        print("Amazing!")
+        get_summary()
+    elif new_trans_response == "N":
+        edit_transportation()
 
 def get_summary():
     print(f""" Let's review your Day Trip:
