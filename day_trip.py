@@ -29,10 +29,10 @@ def selected_transportation():
 selected_transportation = random.choice(transportation)
 
 day_trip = (f"""For your Day Trip we have randomly selected
-a. Destination: {selected_destination}
-b. Restaurant: {selected_restaurant}
-c. Entertainment: {selected_entertainment}
-d. Transportation: {selected_transportation}""")
+    Destination: {selected_destination}
+    Restaurant: {selected_restaurant}
+    Entertainment: {selected_entertainment}
+    Transportation: {selected_transportation}""")
 print(day_trip)
 
 confirmed_trip = (f"""Let's review your Day Trip:
@@ -43,16 +43,16 @@ confirmed_trip = (f"""Let's review your Day Trip:
 
 confirm_choice = input("Please enter Y/N to confirm these travel options. ")
 
-def new_destination(confirm_choice):
-    if confirm_choice == "Y":
+if confirm_choice == "Y":
         print(confirmed_trip)
-    elif confirm_choice != "Y":
+        confirmed_trip
+
+def new_destination(confirm_choice):
+    while confirm_choice != "Y":
         selected_destination = random.choice(destinations)
         confirm_choice = input(f"Would you rather visit {selected_destination} instead? ")
-        # confirm_choice_answer = selected_destination
-        # new_selected_destination = confirm_choice_answer
     else:
-        print(f"You have selected {new_destination} as the destination for your trip.")
+        print(f"You have selected {selected_destination} as the destination for your trip.")
 
 new_destination(confirm_choice)
 
@@ -83,25 +83,27 @@ def new_transportation(confirm_choice):
 
 new_transportation(confirm_choice)
 
+print(confirmed_trip)
+
+# final_answer = input("Are you excited about this trip? Y/N : ")
+# if final_answer != "N":
+#     print("Congratulations! You are all set to enjoy your trip!")
+# else:
+#     print("Sorry we couldn't help to plan your upcoming trip.")
+
+# def confirmed_trip():
+#     print(f""" Let's review your Day Trip:
+# Destination: {new_destination}
+# Restaurant: {new_restaurant}
+# Entertainment: {new_entertainment}
+# Transportation: {new_transportation}""")
 final_answer = input("Are you excited about this trip? Y/N : ")
-if final_answer != "N":
+if final_answer == "Y":
     print("Congratulations! You are all set to enjoy your trip!")
-else:
-    print("Sorry we couldn't help to plan your upcoming trip.")
+elif final_answer == "N":
+    new_destination(confirm_choice)
+    new_restaurant(confirm_choice)
+    new_entertainment(confirm_choice)
+    new_transportation(confirm_choice)
 
-def get_review():
-    print(f""" Let's review your Day Trip:
-    Destination: {new_destination}
-    Restaurant: {new_restaurant}
-    Entertainment: {new_entertainment}
-    Transportation: {new_transportation}""")
-    final_answer = input("Are you excited about this trip? Y/N : ")
-    if final_answer == "Y":
-        print("Congratulations! You are all set to enjoy your trip!")
-    elif final_answer == "N":
-        new_destination(confirm_choice)
-        new_restaurant(confirm_choice)
-        new_entertainment(confirm_choice)
-        new_transportation(confirm_choice)
-
-get_review()
+# confirmed_trip()
