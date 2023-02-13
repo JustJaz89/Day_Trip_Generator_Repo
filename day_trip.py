@@ -35,7 +35,7 @@ c. Entertainment: {selected_entertainment}
 d. Transportation: {selected_transportation}""")
 print(day_trip)
 
-confirmed_trip = (f""" Let's review your Day Trip:
+confirmed_trip = (f"""Let's review your Day Trip:
     Destination: {selected_destination}
     Restaurant: {selected_restaurant}
     Entertainment: {selected_entertainment}
@@ -82,6 +82,12 @@ def new_transportation(confirm_choice):
         print(f"You have selected {selected_transportation} as the transportation for your trip. ")
 
 new_transportation(confirm_choice)
+
+final_answer = input("Are you excited about this trip? Y/N : ")
+if final_answer != "N":
+    print("Congratulations! You are all set to enjoy your trip!")
+else:
+    print("Sorry we couldn't help to plan your upcoming trip.")
 
 def get_review():
     print(f""" Let's review your Day Trip:
@@ -167,4 +173,4 @@ get_review()
 #     if final_answer == "Y":
 #         print("Congratulations! You are all set to enjoy your trip!")
 #     elif final_answer == "N":
-#         get_dest()
+#         edit_selection()
