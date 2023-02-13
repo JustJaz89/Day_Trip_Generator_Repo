@@ -29,10 +29,10 @@ def selected_transportation():
 selected_transportation = random.choice(transportation)
 
 day_trip = (f"""For your Day Trip we have randomly selected
-a. {selected_destination}
-b. {selected_restaurant}
-c. {selected_entertainment}
-d. {selected_transportation}""")
+a. Destination: {selected_destination}
+b. Restaurant: {selected_restaurant}
+c. Entertainment: {selected_entertainment}
+d. Transportation: {selected_transportation}""")
 print(day_trip)
 
 confirm_choice = input("Please enter Y/N to confirm these travel options. ")
