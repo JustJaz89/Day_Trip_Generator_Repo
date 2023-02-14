@@ -43,11 +43,11 @@ confirmed_trip = (f"""Let's review your Day Trip:
 
 confirm_choice = input("Please enter Y/N to confirm these travel options. ")
 
-while confirm_choice:
-    if confirm_choice == "Y":
-        print(confirmed_trip)
-    else:
-        print(selected_destination)
+# while confirm_choice:
+#     if confirm_choice == "Y":
+#         print(confirmed_trip)
+#     else:
+#         print(selected_destination)
 
 def new_destination(confirm_choice):
     if confirm_choice != "Y":
@@ -87,6 +87,15 @@ new_transportation(confirm_choice)
 
 print(confirmed_trip)
 
+final_answer = input("Are you excited about this trip? Y/N : ")
+if final_answer == "Y":
+    print("Congratulations! You are all set to enjoy your trip!")
+elif final_answer == "N":
+    new_destination(confirm_choice)
+    new_restaurant(confirm_choice)
+    new_entertainment(confirm_choice)
+    new_transportation(confirm_choice)
+
 # final_answer = input("Are you excited about this trip? Y/N : ")
 # if final_answer != "N":
 #     print("Congratulations! You are all set to enjoy your trip!")
@@ -99,13 +108,5 @@ print(confirmed_trip)
 # Restaurant: {new_restaurant}
 # Entertainment: {new_entertainment}
 # Transportation: {new_transportation}""")
-final_answer = input("Are you excited about this trip? Y/N : ")
-if final_answer == "Y":
-    print("Congratulations! You are all set to enjoy your trip!")
-elif final_answer == "N":
-    new_destination(confirm_choice)
-    new_restaurant(confirm_choice)
-    new_entertainment(confirm_choice)
-    new_transportation(confirm_choice)
 
 # confirmed_trip()
