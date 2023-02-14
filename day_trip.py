@@ -43,12 +43,14 @@ confirmed_trip = (f"""Let's review your Day Trip:
 
 confirm_choice = input("Please enter Y/N to confirm these travel options. ")
 
-if confirm_choice == "Y":
+while confirm_choice:
+    if confirm_choice == "Y":
         print(confirmed_trip)
-        confirmed_trip
+    else:
+        print(selected_destination)
 
 def new_destination(confirm_choice):
-    while confirm_choice != "Y":
+    if confirm_choice != "Y":
         selected_destination = random.choice(destinations)
         confirm_choice = input(f"Would you rather visit {selected_destination} instead? ")
     else:
@@ -57,7 +59,7 @@ def new_destination(confirm_choice):
 new_destination(confirm_choice)
 
 def new_restaurant(confirm_choice):
-    while confirm_choice != "Y":
+    if confirm_choice != "Y":
         selected_restaurant = random.choice(restaurants)
         confirm_choice = input(f"Would you rather go to {selected_restaurant} instead? ")
     else:
@@ -66,7 +68,7 @@ def new_restaurant(confirm_choice):
 new_restaurant(confirm_choice)
 
 def new_entertainment(confirm_choice):
-    while confirm_choice != "Y":
+    if confirm_choice != "Y":
         selected_entertainment = random.choice(entertainment)
         confirm_choice = input(f"Would you rather enjoy {selected_entertainment} instead? ")
     else:
@@ -75,7 +77,7 @@ def new_entertainment(confirm_choice):
 new_entertainment(confirm_choice)
 
 def new_transportation(confirm_choice):
-    while confirm_choice != "Y":
+    if confirm_choice != "Y":
         selected_transportation = random.choice(transportation)
         confirm_choice = input(f"Would you rather use {selected_transportation} instead? ")
     else:
